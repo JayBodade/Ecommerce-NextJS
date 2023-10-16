@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    overflow-x: hidden;
+    /* background-color: rgb(48, 48, 48); */
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Tailwind CSS classes */
+.typing-animation {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 1px solid black; /* Cursor-style effect */
+  animation: typing 3s steps(40) infinite; /* Adjust the duration as needed */
+}
+
+
+.container{
+  width: 100%;
+  
+
+}
+
+.container h1{
+  font-size: 30px;
+}
+
+::-webkit-scrollbar {
+  width: 6px; /* Adjust the width as needed */
+}
+
+/* Define the thumb for WebKit browsers */
+::-webkit-scrollbar-thumb {
+  background-color: black; /* Thumb color */
+  border-radius: 3px; /* Adjust the border radius as needed */
+}
+
+/* Define the scrollbar for Firefox */
+/* Note: Firefox uses a different pseudo-element (thumb) */
+* {
+  scrollbar-width: thin; /* "auto" or "thin" depending on your preference */
+  scrollbar-color: black transparent; /* Thumb and track colors */
+}
+
+/* Define the thumb for Firefox */
+*::-webkit-scrollbar-thumb {
+  background-color: black; /* Thumb color */
+  border-radius: 3px; /* Adjust the border radius as needed */
+}
