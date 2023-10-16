@@ -56,7 +56,7 @@ const MyAccount = () => {
 
 
 
-  const { data, error, isLoading } = useSWR(['http://localhost:3000/api/user/getuser', token], ([url, token]) => fetchUser(url, token))
+  const { data, error, isLoading } = useSWR([process.env.NEXT_PUBLIC_HOSTNAME+'/api/user/getuser', token], ([url, token]) => fetchUser(url, token))
 
 
   const [userdata, setData] = useState<formProps>({

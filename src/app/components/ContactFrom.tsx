@@ -26,7 +26,7 @@ const ContactFrom = () => {
 
   const submtQuery = async () =>{
 
-    const response = await fetch('http://localhost:3000/api/user/addcomplaint',{
+    const response = await fetch(process.env.NEXT_PUBLIC_HOSTNAME+'/api/user/addcomplaint',{
       method:'POST',
       headers:{
         'content-type':'application/json',

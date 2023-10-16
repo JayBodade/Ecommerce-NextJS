@@ -28,7 +28,7 @@ export const metadata : Metadata ={
 
 async function getProducts(id: any) {
 
-  const response = await fetch('http://localhost:3000/api/product/getProduct',{
+  const response = await fetch(process.env.NEXT_PUBLIC_HOSTNAME+'/api/product/getProduct',{
     method:'GET',
     headers:{
       'content-type':'application/json',

@@ -33,7 +33,7 @@ const AdmiForm = () => {
           password:adminCred.password,
         }
         
-        const response = await fetch('http://localhost:3000/api/admin/login',{
+        const response = await fetch(process.env.NEXT_PUBLIC_HOSTNAME+'/api/admin/login',{
             method:'POST',
             headers:{
 

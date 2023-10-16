@@ -31,7 +31,7 @@ async function getOutOfStockProducts(url: string) {
 
 
 const OutOfStock = () => {
-  const { data, error, isLoading } = useSWR([`http://localhost:3000/api/product/getoutofstocks`], ([url]) => getOutOfStockProducts(url))
+  const { data, error, isLoading } = useSWR([`${process.env.NEXT_PUBLIC_HOSTNAME}/api/product/getoutofstocks`], ([url]) => getOutOfStockProducts(url))
 
   const [productData, setProductData] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -51,7 +51,7 @@ const OutOfStock = () => {
   const deleteProduct = async (id: string) => {
 
 
-    const response = await fetch('http://localhost:3000/api/product/deleteproduct', {
+    const response = await fetch(process.env.NEXT_PUBLIC_HOSTNAME+'/api/product/deleteproduct', {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json',
@@ -127,7 +127,7 @@ const OutOfStock = () => {
         return;
       }
 
-      const response = await fetch('http://localhost:3000/api/admin/updateproduct',{
+      const response = await fetch(process.env.NEXT_PUBLIC_HOSTNAME+'/api/admin/updateproduct',{
         method:'PUT',
         headers:{
           'content-type':'application/json',

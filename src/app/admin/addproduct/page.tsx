@@ -151,7 +151,7 @@ const AddProduct = () => {
     }
 
 
-    const response = await fetch('http://localhost:3000/api/admin/upload', {
+    const response = await fetch(process.env.NEXT_PUBLIC_HOSTNAME+'/api/admin/upload', {
       method: 'POST',
       body: formdata
     })
@@ -182,7 +182,7 @@ const AddProduct = () => {
       sizeArray: sizeArray,
     }
 
-    const response2 = await fetch('http://localhost:3000/api/admin/addproduct', {
+    const response2 = await fetch(process.env.NEXT_PUBLIC_HOSTNAME+'/api/admin/addproduct', {
       method: 'POST',
       body: JSON.stringify(body),
       cache: 'no-store',

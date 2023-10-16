@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 async function verifyUser(vid:string){
 
-  const response = await fetch('http://localhost:3000/api/user/verifyuser',{
+  const response = await fetch(process.env.NEXT_PUBLIC_HOSTNAME+'/api/user/verifyuser',{
     method:'GET',
     headers:{
       'content-type':'application/json',

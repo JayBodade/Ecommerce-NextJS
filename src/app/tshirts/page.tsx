@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 import Loader from '../components/Loader';
 import Product from '@/model/product';
-import ProductCard from '../components/ProductCard';
+
 interface Products {
   title: string,
   slug: string,
@@ -70,7 +70,7 @@ const Tshirts = async () => {
 
                 const sizeArray = product.size.split(',');
                 const colorArray = product.color.split(',');
-                return <Link href={`http://localhost:3000/product/${product.slug}`} key={index} className='lg:w-1/4 lg:mb-4 xl:w-1/5 hover:scale-105 transition-all duration-300 ease-in-out  lg:mx-8 border border-gray-100 lg:m-auto m-auto bg-gray-100   md:w-1/2 p-4 w-full lg:mr-4 '><div className="">
+                return <Link href={process.env.NEXT_PUBLIC_HOSTNAME+`/product/${product.slug}`} key={index} className='lg:w-1/4 lg:mb-4 xl:w-1/5 hover:scale-105 transition-all duration-300 ease-in-out  lg:mx-8 border border-gray-100 lg:m-auto m-auto bg-gray-100   md:w-1/2 p-4 w-full lg:mr-4 '><div className="">
                   <div className="block relative h-72 rounded overflow-hidden ">
                     <Image  alt={product.title} className="object-cover object-center   w-full h-68 block bg-blend-normal" width={200} height={200} src={'/uploads/'+product.img} />
                   </div>

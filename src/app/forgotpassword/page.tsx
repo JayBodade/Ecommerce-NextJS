@@ -42,7 +42,7 @@ const ForgotPassword = () => {
         }
 
 
-       const response2 = await fetch('http://localhost:3000/api/user/userinfo',{
+       const response2 = await fetch(process.env.NEXT_PUBLIC_HOSTNAME+'/api/user/userinfo',{
           method:'GET',
           headers:{
             'content-type':'application/json',
@@ -57,14 +57,15 @@ const ForgotPassword = () => {
         let localotp = Math.floor(100000 + Math.random() * 900000)
         setOtp(localotp);
 
-        const apiKey = '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';
-        const mail = 'jaybodade243@gmail.com';
+        const apiKey = process.env.NEXT_PUBLIC_API_KEY;
+    
+        const mail = process.env.NEXT_PUBLIC_MAIL;
 
         const url = 'https://api.brevo.com/v3/smtp/email';
 
         const data = {
             sender: {
-                // name: userCred.username,
+                name: 'DevDeals',
                 email: mail,
             },
             to: [{ email: userCred.email }],
@@ -78,7 +79,7 @@ const ForgotPassword = () => {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
-                'api-key': apiKey
+                'api-key': apiKey || '',
             },
             body: JSON.stringify(data),
         })

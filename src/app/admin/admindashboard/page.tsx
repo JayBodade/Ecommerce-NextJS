@@ -14,7 +14,7 @@ export const metadata : Metadata ={
 
 async function getOutOfStockProducts(){
 
-  const response = await fetch('http://localhost:3000/api/product/getoutofstocks',{
+  const response = await fetch(process.env.NEXT_PUBLIC_HOSTNAME+'/api/product/getoutofstocks',{
     method:'GET',
     headers:{
       'content-type':'application/json',
@@ -38,7 +38,7 @@ async function getOutOfStockProducts(){
 
 async function getTotalMoneyAndSells(){
 
-  const response = await fetch('http://localhost:3000/api/admin/getsells',{
+  const response = await fetch(process.env.NEXT_PUBLIC_HOSTNAME+'/api/admin/getsells',{
     method:'GET',
     headers:{
       'content-type':'application/json',

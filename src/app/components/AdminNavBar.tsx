@@ -14,7 +14,7 @@ const AdminNavBar = () => {
 
     console.log('here');
 
-    const response = await fetch('http://localhost:3000/api/admin/logout', {
+    const response = await fetch(process.env.NEXT_PUBLIC_HOSTNAME+'/api/admin/logout', {
       method: 'GET',
     })
 
